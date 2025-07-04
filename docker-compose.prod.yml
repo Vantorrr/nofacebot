@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  nofacebot:
+    build: .
+    container_name: nofacebot_prod
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ADMIN_ID=${ADMIN_ID}
+      - BOT_NAME=NOFACE Bot
+      - CONTACT_USERNAME=pavel_xdev
+      - DATABASE_URL=sqlite:///./data/app.db
+      - LOG_LEVEL=INFO
+      - DEBUG=false
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - botnet
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  botnet:
+    driver: bridge
+
+volumes:
+  bot_data:
+  bot_logs: 
