@@ -1,0 +1,47 @@
+# URLs for sitemap generation (service × city matrix)
+# Format: <url> [priority] [changefreq] [lastmod]
+
+# Core
+https://noface.digital/ 1.0 daily
+https://noface.digital/uslugi/ 0.9 weekly
+
+# City hubs
+https://noface.digital/moskva/ 0.8 weekly
+https://noface.digital/sankt-peterburg/ 0.8 weekly
+https://noface.digital/ekaterinburg/ 0.8 weekly
+
+# Services list
+# - Сайты и веб-приложения
+# - Telegram-боты
+# - Интернет-магазины
+# - Казино и Web3
+# - Анонимные платформы
+# - AI-интеграции
+# - Стартапы под ключ
+
+# Moscow
+https://noface.digital/moskva/saity-i-web-prilozheniya/ 0.8 weekly
+https://noface.digital/moskva/telegram-boty/ 0.8 weekly
+https://noface.digital/moskva/internet-magaziny/ 0.8 weekly
+https://noface.digital/moskva/kazino-i-web3/ 0.8 weekly
+https://noface.digital/moskva/anonimnye-platformy/ 0.8 weekly
+https://noface.digital/moskva/ai-integracii/ 0.8 weekly
+https://noface.digital/moskva/startapy-pod-klyuch/ 0.8 weekly
+
+# Saint Petersburg
+https://noface.digital/sankt-peterburg/saity-i-web-prilozheniya/ 0.8 weekly
+https://noface.digital/sankt-peterburg/telegram-boty/ 0.8 weekly
+https://noface.digital/sankt-peterburg/internet-magaziny/ 0.8 weekly
+https://noface.digital/sankt-peterburg/kazino-i-web3/ 0.8 weekly
+https://noface.digital/sankt-peterburg/anonimnye-platformy/ 0.8 weekly
+https://noface.digital/sankt-peterburg/ai-integracii/ 0.8 weekly
+https://noface.digital/sankt-peterburg/startapy-pod-klyuch/ 0.8 weekly
+
+# Ekaterinburg
+https://noface.digital/ekaterinburg/saity-i-web-prilozheniya/ 0.8 weekly
+https://noface.digital/ekaterinburg/telegram-boty/ 0.8 weekly
+https://noface.digital/ekaterinburg/internet-magaziny/ 0.8 weekly
+https://noface.digital/ekaterinburg/kazino-i-web3/ 0.8 weekly
+https://noface.digital/ekaterinburg/anonimnye-platformy/ 0.8 weekly
+https://noface.digital/ekaterinburg/ai-integracii/ 0.8 weekly
+https://noface.digital/ekaterinburg/startapy-pod-klyuch/ 0.8 weekly

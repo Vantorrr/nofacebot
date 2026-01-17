@@ -30,7 +30,7 @@ class BroadcastForm(StatesGroup):
 
 def is_admin(user_id: int) -> bool:
     """Check if user is admin."""
-    return user_id == settings.admin_id
+    return user_id in settings.admin_ids
 
 
 def get_admin_menu():
@@ -584,10 +584,11 @@ async def admin_settings(
         await callback.answer("❌ Нет прав", show_alert=True)
         return
     
+    admin_list = ", ".join(str(id) for id in settings.admin_ids) if settings.admin_ids else "Не настроено"
     settings_text = (
         f"⚙️ <b>Настройки бота</b>\n\n"
         f"🤖 <b>Бот:</b> {settings.bot_name}\n"
-        f"👨‍💻 <b>Админ ID:</b> {settings.admin_id}\n"
+        f"👨‍💻 <b>Админы:</b> {admin_list}\n"
         f"📞 <b>Контакт:</b> @{settings.contact_username}\n"
         f"🔧 <b>Debug режим:</b> {'Включен' if settings.debug else 'Выключен'}\n"
         f"📊 <b>Лог уровень:</b> {settings.log_level}\n\n"

@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     # Bot settings
     bot_token: str
     bot_name: str = "NOFACE.digital Bot"
-    admin_id: Optional[int] = None
+    admin_ids: List[int] = []
     contact_username: str = "pavel_xdev"
     
     # Application settings
@@ -44,12 +44,20 @@ class Settings(BaseSettings):
             raise ValueError('Invalid bot token format')
         return v
     
-    @validator('admin_id')
-    def validate_admin_id(cls, v):
-        """Validate admin ID."""
-        if v is not None and v <= 0:
-            raise ValueError('Admin ID must be positive')
-        return v
+    @validator('admin_ids', pre=True)
+    def validate_admin_ids(cls, v):
+        """Validate admin IDs - support both single int and list."""
+        if v is None or v == "":
+            return []
+        if isinstance(v, int):
+            return [v] if v > 0 else []
+        if isinstance(v, str):
+            # Support comma-separated values from .env
+            ids = [int(x.strip()) for x in v.split(',') if x.strip()]
+            return [id for id in ids if id > 0]
+        if isinstance(v, list):
+            return [id for id in v if isinstance(id, int) and id > 0]
+        return []
     
     class Config:
         env_file = ".env"

@@ -144,11 +144,13 @@ SELECT * FROM applications;      # Просмотр заявок
 Основные настройки в `.env`:
 ```bash
 BOT_TOKEN=7876257761:AAHcoByiCBTGXUmFaLeTcDkUTSU2r8qDALU
-ADMIN_ID=8141463258
+ADMIN_IDS=8141463258,849348909
 CONTACT_USERNAME=pavel_xdev
 DEBUG=true
 LOG_LEVEL=DEBUG
 ```
+
+> **Примечание:** Для нескольких админов используйте `ADMIN_IDS` через запятую
 
 ---
 

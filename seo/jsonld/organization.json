@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NOFACE.digital",
+  "url": "https://noface.digital",
+  "logo": "https://noface.digital/logo.png",
+  "sameAs": [
+    "https://t.me/n0face_bot"
+  ],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "availableLanguage": ["ru"],
+    "url": "https://noface.digital/#contact"
+  }]
+}
+
+
+

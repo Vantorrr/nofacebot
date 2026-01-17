@@ -1,0 +1,17 @@
+# Basic robots.txt tuned for Yandex + global bots
+# Place this file at: https://noface.digital/robots.txt
+
+User-agent: *
+Allow: /
+
+# Remove tracking params from indexing to avoid duplicates (Yandex specific)
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_referrer&yclid&gclid&fbclid&from /
+
+# Primary host for Yandex
+Host: noface.digital
+
+# Public sitemap location
+Sitemap: https://noface.digital/sitemap.xml
+
+
+

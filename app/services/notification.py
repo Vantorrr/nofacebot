@@ -35,10 +35,10 @@ class NotificationService:
             True if at least one notification was sent successfully
         """
         if not admin_ids:
-            if not settings.admin_id:
-                logger.warning("No admin ID configured for notifications")
+            if not settings.admin_ids:
+                logger.warning("No admin IDs configured for notifications")
                 return False
-            admin_ids = [settings.admin_id]
+            admin_ids = settings.admin_ids
         
         message = application.to_admin_message()
         success_count = 0
@@ -86,10 +86,10 @@ class NotificationService:
             Number of successfully sent messages
         """
         if not admin_ids:
-            if not settings.admin_id:
-                logger.warning("No admin ID configured")
+            if not settings.admin_ids:
+                logger.warning("No admin IDs configured")
                 return 0
-            admin_ids = [settings.admin_id]
+            admin_ids = settings.admin_ids
         
         success_count = 0
         
@@ -124,9 +124,9 @@ class NotificationService:
             Dictionary with broadcast results
         """
         if not admin_ids:
-            if not settings.admin_id:
-                return {"success": 0, "failed": 0, "errors": ["No admin ID configured"]}
-            admin_ids = [settings.admin_id]
+            if not settings.admin_ids:
+                return {"success": 0, "failed": 0, "errors": ["No admin IDs configured"]}
+            admin_ids = settings.admin_ids
         
         results = {
             "success": 0,
