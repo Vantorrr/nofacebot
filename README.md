@@ -143,11 +143,12 @@ SELECT * FROM applications;      # Просмотр заявок
 
 Основные настройки в `.env`:
 ```bash
-BOT_TOKEN=7876257761:AAHcoByiCBTGXUmFaLeTcDkUTSU2r8qDALU
-ADMIN_IDS=8141463258,849348909
+BOT_TOKEN=your_telegram_bot_token
+ADMIN_IDS=123456789,987654321
 CONTACT_USERNAME=pavel_xdev
-DEBUG=true
-LOG_LEVEL=DEBUG
+DATABASE_URL=postgresql://user:password@host:5432/dbname
+DEBUG=false
+LOG_LEVEL=INFO
 ```
 
 > **Примечание:** Для нескольких админов используйте `ADMIN_IDS` через запятую

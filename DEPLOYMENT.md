@@ -31,8 +31,10 @@ cd nofacebot
 3. **Выбери репозиторий:** nofacebot
 4. **Добавь переменные:**
    ```
-   BOT_TOKEN=7876257761:AAHcoByiCBTGXUmFaLeTcDkUTSU2r8qDALU
-   ADMIN_ID=8141463258
+   BOT_TOKEN=your_telegram_bot_token
+   ADMIN_IDS=123456789
+   CONTACT_USERNAME=pavel_xdev
+   DATABASE_URL=${{Postgres.DATABASE_URL}}
    ```
 5. **Deploy!** 🎉
 
@@ -44,8 +46,8 @@ cd nofacebot
 4. **Runtime:** Docker
 5. **Добавь env vars:**
    ```
-   BOT_TOKEN=7876257761:AAHcoByiCBTGXUmFaLeTcDkUTSU2r8qDALU
-   ADMIN_ID=8141463258
+   BOT_TOKEN=your_telegram_bot_token
+   ADMIN_IDS=123456789
    ```
 
 ## 🛠 Управление ботом

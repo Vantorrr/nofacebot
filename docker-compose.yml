@@ -10,11 +10,11 @@ services:
     restart: unless-stopped
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
-      - ADMIN_ID=${ADMIN_ID}
+      - ADMIN_IDS=${ADMIN_IDS}
       - CONTACT_USERNAME=${CONTACT_USERNAME:-nofacedigital}
       - DEBUG=${DEBUG:-false}
       - LOG_LEVEL=${LOG_LEVEL:-INFO}
-      - DATABASE_URL=sqlite:///data/bot.db
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///data/bot.db}
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs

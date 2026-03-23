@@ -138,8 +138,8 @@ async def main() -> None:
     
     # Validate configuration
     try:
-        logger.info(f"Bot token: {settings.bot_token[:10]}...")
-        logger.info(f"Admin ID: {settings.admin_id}")
+        logger.info("Bot token configured successfully")
+        logger.info(f"Admin IDs: {settings.admin_ids}")
         logger.info(f"Debug mode: {settings.debug}")
         logger.info(f"Database: {settings.database_url}")
     except Exception as e:

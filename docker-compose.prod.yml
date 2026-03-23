@@ -7,10 +7,10 @@ services:
     restart: unless-stopped
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
-      - ADMIN_ID=${ADMIN_ID}
+      - ADMIN_IDS=${ADMIN_IDS}
       - BOT_NAME=NOFACE Bot
       - CONTACT_USERNAME=pavel_xdev
-      - DATABASE_URL=sqlite:///./data/app.db
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///./data/app.db}
       - LOG_LEVEL=INFO
       - DEBUG=false
     volumes:

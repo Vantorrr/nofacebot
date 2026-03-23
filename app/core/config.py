@@ -46,9 +46,13 @@ class Settings(BaseSettings):
     
     @validator('admin_ids', pre=True)
     def validate_admin_ids(cls, v):
-        """Validate admin IDs - support both single int and list."""
+        """Validate admin IDs - support both legacy single ID and lists."""
         if v is None or v == "":
-            return []
+            legacy_admin_id = os.getenv("ADMIN_ID")
+            if legacy_admin_id:
+                v = legacy_admin_id
+            else:
+                return []
         if isinstance(v, int):
             return [v] if v > 0 else []
         if isinstance(v, str):
@@ -58,6 +62,13 @@ class Settings(BaseSettings):
         if isinstance(v, list):
             return [id for id in v if isinstance(id, int) and id > 0]
         return []
+
+    @validator('database_url', pre=True)
+    def normalize_database_url(cls, v):
+        """Normalize database URLs from hosting providers."""
+        if isinstance(v, str) and v.startswith("postgres://"):
+            return v.replace("postgres://", "postgresql://", 1)
+        return v
     
     class Config:
         env_file = ".env"

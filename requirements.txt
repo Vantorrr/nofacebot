@@ -6,6 +6,7 @@ aiofiles==23.2.1
 # Database
 sqlalchemy==2.0.35
 alembic==1.14.0
+psycopg2-binary
 
 # Configuration & Validation
 pydantic==2.8.2
